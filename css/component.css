@@ -1,0 +1,344 @@
+@import url(https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700);
+
+
+
+/* General grid styles */
+.cbp-ig-grid {
+	list-style: none;
+	padding: 0 0 50px 0;
+	margin: auto;
+	width: 40em;
+}
+
+/* Clear floats */
+.cbp-ig-grid:before, 
+.cbp-ig-grid:after { 
+	content: " "; 
+	display: table; 
+}
+
+.cbp-ig-grid:after { 
+	clear: both; 
+}
+
+/* grid item */
+.cbp-ig-grid li {
+	width: 100%;
+	float: left;
+	height: auto;
+	text-align: center;
+	padding: 0 0 2em 0;
+}
+
+.card {
+	display: flex;
+    border: solid 6px #FB3637;
+	border-radius: 2em;
+    flex-direction: column;
+    flex-wrap: nowrap;
+	padding: 0 0 2em 0;
+}
+
+.card-img {
+	display: flex;
+    border: solid 6px #FB3637;
+	border-radius: 2em;
+    flex-direction: column;
+    flex-wrap: nowrap;
+	padding: 0 0 2em 0;
+	background-color: #202020;
+}
+
+
+/* we are using a combination of borders and box shadows to control the grid lines */
+.cbp-ig-grid li:nth-child(-n+3){
+	border-top: none;
+}
+
+.cbp-ig-grid li:nth-child(3n-1),
+.cbp-ig-grid li:nth-child(3n-2) {
+	box-shadow: 1px 0 0 #ddd;
+}
+
+/* anchor style 
+.cbp-ig-grid li > a {
+	display: block;
+	height: 100%;
+	color: #47a3da;
+	-webkit-transition: background 0.2s;
+	-moz-transition: background 0.2s;
+	transition: background 0.2s;
+}*/
+
+/* the icon with pseudo class for icon font */
+.cbp-ig-icon {
+	padding: 30px 0 0 0;
+	display: block;
+	-webkit-transition: -webkit-transform 0.2s;
+	transition: -moz-transform 0.2s;
+	transition: transform 0.2s;
+}
+
+/* title element */
+.cbp-ig-grid .cbp-ig-title {
+	margin: 20px 0 10px 0;
+	padding: 20px 0 0 0;
+	font-size: 2em;
+	position: relative;
+	-webkit-transition: -webkit-transform 0.2s;
+	-moz-transition: -moz-transform 0.2s;
+	transition: transform 0.2s;
+}
+
+.cbp-ig-grid .cbp-ig-title:before {
+	content: '';
+	position: absolute;
+	background: #47a3da;
+	width: 160px;
+	height: 6px;
+	top: 0px;
+	left: 50%;
+	
+	-webkit-transition: margin-top 0.2s; /* top or translate does not seem to work in Firefox */
+	-moz-transition: margin-top 0.2s;
+	transition: margin-top 0.2s;
+}
+
+.cbp-ig-grid .cbp-ig-category {
+	text-transform: uppercase;
+	display: inline-block;
+	font-size: 1em;
+	letter-spacing: 1px;
+	color: #fff;
+	-webkit-transform: translateY(10px);
+	-moz-transform: -moz-translateY(10px);
+	-ms-transform: -ms-translateY(10px);
+	transform: translateY(10px);
+	opacity: 0;
+	-webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
+	-moz-transition: -moz-transform 0.3s, opacity 0.2s;
+	-webkit-transition: transform 0.3s, opacity 0.2s;
+}
+
+.cbp-ig-grid li:hover .cbp-ig-category,
+.touch .cbp-ig-grid li .cbp-ig-category {
+	opacity: 1;
+	-webkit-transform: translateY(0px);
+	-moz-transform: translateY(0px);
+	-ms-transform: translateY(0px);
+	transform: translateY(0px);
+}
+
+
+
+
+@media screen and (max-width: 62.75em) {
+	.cbp-ig-grid {
+		width: 100%;
+	}
+	
+	
+	.cbp-ig-grid li {
+	}
+
+	/* reset the grid lines */
+	.cbp-ig-grid li:nth-child(-n+3){
+		border-top: 1px solid #ddd;
+	}
+
+	.cbp-ig-grid li:nth-child(3n-1),
+	.cbp-ig-grid li:nth-child(3n-2) {
+		box-shadow: none;
+	}
+
+	.cbp-ig-grid li:nth-child(-n+2){
+		border-top: none;
+	}
+
+	.cbp-ig-grid li:nth-child(2n-1) {
+		box-shadow: 1px 0 0 #ddd;
+	}
+}
+
+@media screen and (max-width: 41.6em) { 
+	.cbp-ig-grid li {
+		width: 100%;
+	}
+
+	.cbp-ig-grid li:nth-child(-n+2){
+		border-top: 1px solid #ddd;
+	}
+
+	.cbp-ig-grid li:nth-child(2n-1) {
+		box-shadow: none
+	}
+
+	.cbp-ig-grid li:first-child {
+		border-top: none;
+	}
+}
+
+@media screen and (max-width: 25em) { 
+	.cbp-ig-grid {
+		font-size: 80%;
+	}
+
+	.cbp-ig-grid .cbp-ig-category {
+		margin-top: 20px;
+	}
+}
+
+
+/*for image gallery*/
+
+/* General grid styles */
+.cbp-ig-grid-img {
+	    list-style: none;
+    padding: 0 0 1em 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-between;
+    justify-content: center;
+	gap:0 1em;
+}
+
+/* Clear floats */
+.cbp-ig-grid-img:before, 
+.cbp-ig-grid-img:after { 
+	
+	display: table; 
+}
+
+.cbp-ig-grid-img:after { 
+	clear: both; 
+}
+
+/* grid item */
+.cbp-ig-grid-img li {
+	display: flex;
+    list-style: none;
+    
+    margin: 0 0 1em 0;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-between;
+    align-items: flex-start;
+	width: 30%;
+	float: left;
+	height: auto;
+	text-align: center;
+	border-top: 1px solid #ddd;
+}
+
+.cbp-ig-grid-img li img {
+	width: 100%;
+	border-radius: 1.6em 1.6em 0 0;
+}
+
+/* we are using a combination of borders and box shadows to control the grid lines */
+.cbp-ig-grid-img li:nth-child(-n+3){
+	border-top: none;
+}
+
+.cbp-ig-grid-img li:nth-child(3n-1),
+.cbp-ig-grid-img li:nth-child(3n-2) {
+	box-shadow: 1px 0 0 #ddd;
+}
+
+
+
+/* title element */
+.cbp-ig-grid-img .cbp-ig-title {
+	padding: 1em 0;
+	font-size: 2em;
+	position: relative;
+	-webkit-transition: -webkit-transform 0.2s;
+	-moz-transition: -moz-transform 0.2s;
+	transition: transform 0.2s;
+}
+
+
+
+/* Hover styles */
+
+
+
+.cbp-ig-grid-img li > a:hover .cbp-ig-icon {
+	-webkit-transform: translateY(10px);
+	-moz-transform: translateY(10px);
+	-ms-transform: translateY(10px);
+	transform: translateY(10px);
+}
+
+.cbp-ig-grid-img li > a:hover .cbp-ig-icon:before,
+.cbp-ig-grid-img li > a:hover .cbp-ig-title {
+	color: #fff;
+}
+
+.cbp-ig-grid-img li > a:hover .cbp-ig-title {
+	-webkit-transform: translateY(-30px);
+	-moz-transform: translateY(-30px);
+	-ms-transform: translateY(-30px);
+	transform: translateY(-30px);
+}
+
+.cbp-ig-grid-img li > a:hover .cbp-ig-title:before {
+	background: #fff;
+	margin-top: 80px;
+}
+
+
+@media screen and (max-width: 62.75em) {
+	.cbp-ig-grid-img li {
+		width: 47%;
+	}
+
+	/* reset the grid lines */
+	.cbp-ig-grid-img li:nth-child(-n+3){
+		border-top: 1px solid #ddd;
+	}
+
+	.cbp-ig-grid-img li:nth-child(3n-1),
+	.cbp-ig-grid-img li:nth-child(3n-2) {
+		box-shadow: none;
+	}
+
+	.cbp-ig-grid-img li:nth-child(-n+2){
+		border-top: none;
+	}
+
+	.cbp-ig-grid-img li:nth-child(2n-1) {
+		box-shadow: 1px 0 0 #ddd;
+	}
+}
+
+@media screen and (max-width: 41.6em) { 
+	.cbp-ig-grid-img li {
+		width: 100%;
+	}
+
+	.cbp-ig-grid-img li:nth-child(-n+2){
+		border-top: 1px solid #ddd;
+	}
+
+	.cbp-ig-grid-img li:nth-child(2n-1) {
+		box-shadow: none
+	}
+
+	.cbp-ig-grid-img li:first-child {
+		border-top: none;
+	}
+}
+
+@media screen and (max-width: 25em) { 
+	.cbp-ig-grid-img {
+		font-size: 80%;
+	}
+
+	.cbp-ig-grid-img .cbp-ig-category {
+		margin-top: 20px;
+	}
+}
