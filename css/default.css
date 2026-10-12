@@ -266,28 +266,28 @@ p {
 }
 
 #btn-cal::before {
-  content: url('/img/calendar.svg');
+  content: url('./img/calendar.svg');
   display: inline-block;
   vertical-align: middle;
   margin-right: 8px; /* Adds space between icon and text */
 }
 
 #btn-tik::before {
-  content: url('/img/tiktok-icon.svg');
+  content: url('./img/tiktok-icon.svg');
   display: inline-block;
   vertical-align: middle;
   margin-right: 8px; /* Adds space between icon and text */
 }
 
 #btn-phone::before {
-  content: url('/img/phone-done.svg');
+  content: url('./img/phone-done.svg');
   display: inline-block;
   vertical-align: middle;
   margin-right: 8px; /* Adds space between icon and text */
 }
 
 .noah-logo::after {
-  content: url('/img/rosette-discount-check.svg');
+  content: url('./img/rosette-discount-check.svg');
   display: inline-block;
   vertical-align: middle;
   margin-left: 8px; /* Adds space between icon and text */
@@ -295,7 +295,7 @@ p {
 }
 
 .noah-logo:hover::after {
-	content: url('/img/rosette-discount-check.svg');
+	content: url('./img/rosette-discount-check.svg');
   display: inline-block;
   vertical-align: middle;
   fill: #fb3637;
